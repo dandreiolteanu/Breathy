@@ -23,20 +23,6 @@ struct BreathingSessionGetReadyView<ViewModel: BreathingSessionGetReadyViewModel
                 .background(Color(.primaryBackground))
 
             VStack {
-                ZStack {
-                    HStack {
-                        Button {
-                            viewModel.outputs.didPressClose()
-                        } label: {
-                            Image(Asset.icnClose.name)
-                        }
-                        
-                        Spacer()
-                    }
-                }
-                .padding(.top, .padding2x)
-                .padding(.bottom, .padding)
-
                 Spacer()
 
                 VStack(alignment: .center, spacing: .padding3x) {

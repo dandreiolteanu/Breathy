@@ -9,7 +9,6 @@ import Foundation
 import CoreHaptics
 
 protocol BreathingSessionGetReadyViewModelFlowDelegate: AnyObject {
-    func shouldClose()
     func shouldStartExercise()
 }
 
@@ -19,7 +18,6 @@ protocol BreathingSessionGetReadyViewModelInputs {
 
 protocol BreathingSessionGetReadyViewModelOutputs {
     func onAppear()
-    func didPressClose()
 }
 
 protocol BreathingSessionGetReadyViewModel: ObservableObject {
@@ -47,8 +45,7 @@ final class BreathingSessionGetReadyViewModelImpl: BreathingSessionGetReadyViewM
 
     private let getReadyDuration: Int
     private var timer: Timer?
-//    private var hapticEngine: BreathingExerciseHapticEngine?
-//    private let isMuted = !UserDefaultsManager.shared.breathingVibrateEnabled
+    private var hapticEngine = BreathingExerciseHapticEngine()
     
     // MARK: - Init
     
@@ -60,10 +57,7 @@ final class BreathingSessionGetReadyViewModelImpl: BreathingSessionGetReadyViewM
     // MARK: - Public Methods
 
     func onAppear() {
-//        if CHHapticEngine.capabilitiesForHardware().supportsHaptics {
-//            hapticEngine = try? BreathingExerciseHapticEngine(isMuted: isMuted)
-//            try? hapticEngine?.playGetReady(seconds: currentTime)
-//        }
+        hapticEngine?.playGetReady(seconds: currentTime)
 
         currentTime = getReadyDuration
 
@@ -80,12 +74,5 @@ final class BreathingSessionGetReadyViewModelImpl: BreathingSessionGetReadyViewM
 
             self.currentTime -= 1
         })
-    }
-
-    func didPressClose() {
-        timer?.invalidate()
-        timer = nil
-
-        flowDelegate?.shouldClose()
     }
 }

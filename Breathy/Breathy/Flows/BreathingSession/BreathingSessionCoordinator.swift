@@ -55,10 +55,6 @@ final class BreathingSessionCoordinator: NSObject, Coordinator {
 
 extension BreathingSessionCoordinator: BreathingSessionGetReadyViewModelFlowDelegate {
 
-    func shouldClose() {
-        flowDelegate?.didFinish(on: self)
-    }
-
     func shouldStartExercise() {
         let viewModel = BreathingSessionViewModelImpl(breathingExerciseInfo: breathingExerciseInfo)
         viewModel.flowDelegate = self
