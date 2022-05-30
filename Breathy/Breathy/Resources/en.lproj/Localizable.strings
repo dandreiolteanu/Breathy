@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  Breathy
+
+  Created by Andrei Olteanu on 30.05.2022.
+  
+*/
+
+// Breathing Exercises List
+"BreathingExercisesList.morningTitle" = "Good Morning, %@";
+"BreathingExercisesList.afternoonTitle" = "Good Afternoon, %@";
+"BreathingExercisesList.eveningTitle" = "Good Evening, %@";
+"BreathingExercisesList.subtitle" = "Start relaxing with our breathing exercises";
+"BreathingExercisesList.comingSoonTitle" = "More coming soon...";
+"BreathingExercisesList.comingSoonSubtitle" = "Breathy is doing it’s best to produce new breathing exercises.";
+
+// Breathing Info
+"BreathingInfo.stressTitle" = "Reduce Stress";
+"BreathingInfo.sleepTitle" = "Better Sleep";
+"BreathingInfo.happinessTitle" = "Increase Happiness";
+
+"BreathingSession.warning" = "We recommend practicing breathwork while sitting or lying down. If you feel lightheaded, please stop immediately. Do not practice while driving or in water.";
+"BreathingSession.getReady" = "Get Ready";
+"BreathingSession.inhale" = "Inhale";
+"BreathingSession.exhale" = "Exhale";
+"BreathingSession.hold" = "Hold";

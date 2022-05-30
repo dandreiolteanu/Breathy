@@ -15,7 +15,7 @@ final class RootCoordinator {
 
     // MARK: - Private Properties
 
-    private var breathingCoordinator: BreathingCoordinator?
+    private var mainCoordinator: MainCoordinator?
 
     // MARK: - Init
 
@@ -23,11 +23,13 @@ final class RootCoordinator {
         self.window = window
     }
 
-    // MARK: - 
+    // MARK: - Public Methods
     
     func start() {
-        let coordinator = BreathingCoordinator()
-        self.breathingCoordinator = coordinator
+        let coordinator = MainCoordinator()
+        coordinator.start()
+
+        self.mainCoordinator = coordinator
 
         show(coordinator: coordinator)
     }

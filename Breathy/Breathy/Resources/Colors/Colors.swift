@@ -11,12 +11,24 @@ import UIKit.UIColor
 /// Don't forget to add the color in Colors.xcassets as well with the same name as the case's name.
 private enum Color: String {
     case primaryBackground
+    case secondaryBackground
+
+    case primaryText
+    case secondaryText
+
+    case progressBarColor
 }
 
 // MARK: - Colors
 
 extension UIColor {
     static let primaryBackground = UIColor.initialize(with: .primaryBackground)
+    static let secondaryBackground = UIColor.initialize(with: .secondaryBackground)
+
+    static let primaryText = UIColor.initialize(with: .primaryText)
+    static let secondaryText = UIColor.initialize(with: .secondaryText)
+
+    static let progressBarColor = UIColor.initialize(with: .progressBarColor)
 }
 
 // MARK: - Helpers

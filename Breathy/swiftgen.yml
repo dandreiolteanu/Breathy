@@ -1,0 +1,13 @@
+strings:
+  inputs: Breathy/Resources/en.lproj/Localizable.strings
+  outputs:
+    templateName: structured-swift5
+    output: Breathy/Resources/Generated/Strings+Generated.swift
+
+xcassets:
+  inputs:
+    - Breathy/Resources/Assets/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: Breathy/Resources/Generated/Assets+Generated.swift
+      

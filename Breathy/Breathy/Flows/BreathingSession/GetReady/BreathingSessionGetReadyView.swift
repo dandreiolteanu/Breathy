@@ -1,0 +1,75 @@
+//
+//  BreathingSessionGetReadyView.swift
+//  Breathy
+//
+//  Created by Andrei Olteanu on 30.05.2022.
+//
+
+import SwiftUI
+
+struct BreathingSessionGetReadyView<ViewModel: BreathingSessionGetReadyViewModel>: View {
+
+    // MARK: - Public Properties
+
+    @ObservedObject var viewModel: ViewModel
+    
+    // MARK: - Body
+
+    var body: some View {
+        VStack {
+
+            ZStack {
+                HStack {
+                    Button {
+                        viewModel.outputs.didPressClose()
+                    } label: {
+                        Image(Asset.icnClose.name)
+                    }
+                    
+                    Spacer()
+                }
+            }
+            .padding(.top, .padding2x)
+            .padding(.bottom, .padding)
+
+            Spacer()
+
+            VStack(alignment: .center, spacing: .padding3x) {
+                Text("\(viewModel.inputs.currentTime)")
+                    .font(Font(.h1Bold))
+                    .foregroundColor(Color(.progressBarColor))
+
+                Text(L10n.BreathingSession.getReady)
+                    .font(Font(.h1Bold))
+                    .foregroundColor(Color(.primaryText))
+            }
+
+            Spacer()
+
+            VStack(alignment: .center, spacing: .padding2x) {
+                Image(Asset.icnWarning.name)
+
+                Text(L10n.BreathingSession.warning)
+                    .font(Font(.tertiaryTextRegular))
+                    .foregroundColor(Color(.secondaryText))
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(nil)
+            }
+            .padding(.bottom, .padding6x)
+        }
+        .padding([.leading, .trailing], .padding3x)
+        .background(Color(.primaryBackground))
+        .preferredColorScheme(.dark)
+        .navigationBarHidden(true)
+        .onAppear {
+            viewModel.outputs.onAppear()
+        }
+    }
+}
+
+struct BreathingExerciseGetReadyView_Previews: PreviewProvider {
+    static var previews: some View {
+        BreathingSessionGetReadyView(viewModel: BreathingSessionGetReadyViewModelImpl(getReadyDuration: 3))
+    }
+}
