@@ -24,10 +24,12 @@
 		FA3F7073283FCFF500CFD7E2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F7069283FCFF500CFD7E2 /* MainCoordinator.swift */; };
 		FA3F7074283FCFF500CFD7E2 /* BreathingExercisesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F706B283FCFF500CFD7E2 /* BreathingExercisesListViewModel.swift */; };
 		FA3F7075283FCFF500CFD7E2 /* BreathingExercisesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F706C283FCFF500CFD7E2 /* BreathingExercisesListViewController.swift */; };
+		FA40C44428453C2200E2F3E8 /* NavigationControllerFadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40C44328453C2200E2F3E8 /* NavigationControllerFadeAnimator.swift */; };
 		FA48CFBF284514F50038AACA /* BreathingSessionHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48CFBE284514F50038AACA /* BreathingSessionHapticEngine.swift */; };
 		FA48CFC2284518C40038AACA /* BreathingAnimationStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48CFC1284518C40038AACA /* BreathingAnimationStateView.swift */; };
 		FA48CFC4284518CC0038AACA /* BreathingSessionDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48CFC3284518CC0038AACA /* BreathingSessionDurationView.swift */; };
 		FA7D8DB12842393A00C1CD0A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D8DB02842393A00C1CD0A /* Font.swift */; };
+		FA8DC827284537F200FCA6BD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8DC826284537F200FCA6BD /* BaseViewController.swift */; };
 		FABE36552844BD27002A24D6 /* BreathingExerciseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE36542844BD27002A24D6 /* BreathingExerciseInfo.swift */; };
 		FABE365F2844C71E002A24D6 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE365E2844C71E002A24D6 /* Strings+Generated.swift */; };
 		FABE36612844C724002A24D6 /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE36602844C724002A24D6 /* Assets+Generated.swift */; };
@@ -73,10 +75,12 @@
 		FA3F7069283FCFF500CFD7E2 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FA3F706B283FCFF500CFD7E2 /* BreathingExercisesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreathingExercisesListViewModel.swift; sourceTree = "<group>"; };
 		FA3F706C283FCFF500CFD7E2 /* BreathingExercisesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreathingExercisesListViewController.swift; sourceTree = "<group>"; };
+		FA40C44328453C2200E2F3E8 /* NavigationControllerFadeAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerFadeAnimator.swift; sourceTree = "<group>"; };
 		FA48CFBE284514F50038AACA /* BreathingSessionHapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingSessionHapticEngine.swift; sourceTree = "<group>"; };
 		FA48CFC1284518C40038AACA /* BreathingAnimationStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingAnimationStateView.swift; sourceTree = "<group>"; };
 		FA48CFC3284518CC0038AACA /* BreathingSessionDurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingSessionDurationView.swift; sourceTree = "<group>"; };
 		FA7D8DB02842393A00C1CD0A /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		FA8DC826284537F200FCA6BD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FABE36542844BD27002A24D6 /* BreathingExerciseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingExerciseInfo.swift; sourceTree = "<group>"; };
 		FABE365E2844C71E002A24D6 /* Strings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		FABE36602844C724002A24D6 /* Assets+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 		FA3F7061283FCFF500CFD7E2 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				FA8DC826284537F200FCA6BD /* BaseViewController.swift */,
 				FA3F7064283FCFF500CFD7E2 /* Coordinator.swift */,
 				FA3F7063283FCFF500CFD7E2 /* RootCoordinator.swift */,
 				FA3F7062283FCFF500CFD7E2 /* RootCoordinator+Extensions.swift */,
@@ -209,6 +214,14 @@
 				FABE36562844BD9E002A24D6 /* Cells */,
 			);
 			path = BreathingExercisesList;
+			sourceTree = "<group>";
+		};
+		FA40C44228453C1C00E2F3E8 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				FA40C44328453C2200E2F3E8 /* NavigationControllerFadeAnimator.swift */,
+			);
+			path = Animators;
 			sourceTree = "<group>";
 		};
 		FA48CFC0284518B50038AACA /* Views */ = {
@@ -259,6 +272,7 @@
 		FABE36672844CA40002A24D6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FA40C44228453C1C00E2F3E8 /* Animators */,
 				FABE366B2844CAD2002A24D6 /* Protocols */,
 				FABE36682844CA47002A24D6 /* Extensions */,
 				FA48CFBE284514F50038AACA /* BreathingSessionHapticEngine.swift */,
@@ -480,8 +494,10 @@
 				FABE36862844F4AE002A24D6 /* ComingSoonCellViewModel.swift in Sources */,
 				FA3F7072283FCFF500CFD7E2 /* SceneDelegate.swift in Sources */,
 				FABE36612844C724002A24D6 /* Assets+Generated.swift in Sources */,
+				FA40C44428453C2200E2F3E8 /* NavigationControllerFadeAnimator.swift in Sources */,
 				FABE36702844CCF4002A24D6 /* BreathingExercisesListTableViewCell.swift in Sources */,
 				FAC10E5B283FFC2E000919D9 /* Colors.swift in Sources */,
+				FA8DC827284537F200FCA6BD /* BaseViewController.swift in Sources */,
 				FABE365F2844C71E002A24D6 /* Strings+Generated.swift in Sources */,
 				FA7D8DB12842393A00C1CD0A /* Font.swift in Sources */,
 				FA1725E72844FDFF00538BB7 /* BreathingSessionGetReadyViewModel.swift in Sources */,

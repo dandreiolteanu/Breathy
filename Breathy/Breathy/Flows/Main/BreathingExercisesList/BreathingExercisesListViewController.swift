@@ -9,7 +9,7 @@ import Combine
 import UIKit
 import SnapKit
 
-final class BreathingExercisesListViewController: UIViewController {
+final class BreathingExercisesListViewController: BaseViewController {
     
     // MARK: - Private properties
 
@@ -25,7 +25,7 @@ final class BreathingExercisesListViewController: UIViewController {
     init(viewModel: BreathingExercisesListViewModel) {
         self.viewModel = viewModel
 
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -46,12 +46,6 @@ final class BreathingExercisesListViewController: UIViewController {
 
     private func setupView() {
         navigationController?.setNavigationBarHidden(true, animated: true)
-
-        view.backgroundColor = .primaryBackground
-
-        let backgroundImageView = UIImageView(image: Asset.imgMainBackground.image)
-        backgroundImageView.contentMode = .scaleAspectFill
-        tableView.backgroundView = backgroundImageView
 
         tableView.register(cellType: GreetingTableViewCell.self)
         tableView.register(cellType: BreathingExercisesListTableViewCell.self)

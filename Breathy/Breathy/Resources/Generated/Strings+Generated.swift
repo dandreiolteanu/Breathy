@@ -42,6 +42,14 @@ internal enum L10n {
   }
 
   internal enum BreathingSession {
+    /// Continue
+    internal static let alertContinueAction = L10n.tr("Localizable", "BreathingSession.alertContinueAction")
+    /// Discard
+    internal static let alertDiscardAction = L10n.tr("Localizable", "BreathingSession.alertDiscardAction")
+    /// Your current breathing session is not completed.
+    internal static let alertMessage = L10n.tr("Localizable", "BreathingSession.alertMessage")
+    /// Are you sure you want to discard?
+    internal static let alertTitle = L10n.tr("Localizable", "BreathingSession.alertTitle")
     /// Exhale
     internal static let exhale = L10n.tr("Localizable", "BreathingSession.exhale")
     /// Get Ready

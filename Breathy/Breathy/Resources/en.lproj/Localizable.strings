@@ -24,3 +24,7 @@
 "BreathingSession.inhale" = "Inhale";
 "BreathingSession.exhale" = "Exhale";
 "BreathingSession.hold" = "Hold";
+"BreathingSession.alertTitle" = "Are you sure you want to discard?";
+"BreathingSession.alertMessage" = "Your current breathing session is not completed.";
+"BreathingSession.alertDiscardAction" = "Discard";
+"BreathingSession.alertContinueAction" = "Continue";

@@ -10,7 +10,7 @@ import Combine
 import UIKit
 import SnapKit
 
-final class BreathingSessionViewController: UIViewController {
+final class BreathingSessionViewController: BaseViewController {
     
     // MARK: - Private properties
 
@@ -32,7 +32,7 @@ final class BreathingSessionViewController: UIViewController {
     init(viewModel: BreathingSessionViewModel) {
         self.viewModel = viewModel
 
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     required init?(coder aDecoder: NSCoder) {

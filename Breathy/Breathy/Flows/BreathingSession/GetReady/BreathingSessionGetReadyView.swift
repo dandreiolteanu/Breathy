@@ -16,50 +16,55 @@ struct BreathingSessionGetReadyView<ViewModel: BreathingSessionGetReadyViewModel
     // MARK: - Body
 
     var body: some View {
-        VStack {
+        ZStack {
+            Image(Asset.imgMainBackground.name)
+                .resizable()
+                .edgesIgnoringSafeArea(.all)
+                .background(Color(.primaryBackground))
 
-            ZStack {
-                HStack {
-                    Button {
-                        viewModel.outputs.didPressClose()
-                    } label: {
-                        Image(Asset.icnClose.name)
+            VStack {
+                ZStack {
+                    HStack {
+                        Button {
+                            viewModel.outputs.didPressClose()
+                        } label: {
+                            Image(Asset.icnClose.name)
+                        }
+                        
+                        Spacer()
                     }
-                    
-                    Spacer()
                 }
+                .padding(.top, .padding2x)
+                .padding(.bottom, .padding)
+
+                Spacer()
+
+                VStack(alignment: .center, spacing: .padding3x) {
+                    Text("\(viewModel.inputs.currentTime)")
+                        .font(Font(.h1Bold))
+                        .foregroundColor(Color(.progressBarColor))
+
+                    Text(L10n.BreathingSession.getReady)
+                        .font(Font(.h1Bold))
+                        .foregroundColor(Color(.primaryText))
+                }
+
+                Spacer()
+
+                VStack(alignment: .center, spacing: .padding2x) {
+                    Image(Asset.icnWarning.name)
+
+                    Text(L10n.BreathingSession.warning)
+                        .font(Font(.tertiaryTextRegular))
+                        .foregroundColor(Color(.secondaryText))
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .lineLimit(nil)
+                }
+                .padding(.bottom, .padding6x)
             }
-            .padding(.top, .padding2x)
-            .padding(.bottom, .padding)
-
-            Spacer()
-
-            VStack(alignment: .center, spacing: .padding3x) {
-                Text("\(viewModel.inputs.currentTime)")
-                    .font(Font(.h1Bold))
-                    .foregroundColor(Color(.progressBarColor))
-
-                Text(L10n.BreathingSession.getReady)
-                    .font(Font(.h1Bold))
-                    .foregroundColor(Color(.primaryText))
-            }
-
-            Spacer()
-
-            VStack(alignment: .center, spacing: .padding2x) {
-                Image(Asset.icnWarning.name)
-
-                Text(L10n.BreathingSession.warning)
-                    .font(Font(.tertiaryTextRegular))
-                    .foregroundColor(Color(.secondaryText))
-                    .multilineTextAlignment(.center)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .lineLimit(nil)
-            }
-            .padding(.bottom, .padding6x)
+            .padding([.leading, .trailing], .padding3x)
         }
-        .padding([.leading, .trailing], .padding3x)
-        .background(Color(.primaryBackground))
         .preferredColorScheme(.dark)
         .navigationBarHidden(true)
         .onAppear {

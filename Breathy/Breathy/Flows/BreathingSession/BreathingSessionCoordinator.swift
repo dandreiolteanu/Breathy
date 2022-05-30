@@ -11,7 +11,7 @@ protocol BreathingSessionCoordinatorFlowDelegate: AnyObject {
     func didFinish(on coordinator: BreathingSessionCoordinator)
 }
 
-final class BreathingSessionCoordinator: Coordinator {
+final class BreathingSessionCoordinator: NSObject, Coordinator {
 
     // MARK: - Public Properties
 
@@ -42,7 +42,11 @@ final class BreathingSessionCoordinator: Coordinator {
 
         let viewController = BreathingSessionGetReadyView(viewModel: viewModel).asUIViewController
         viewController.view.backgroundColor = .primaryBackground
-        mainViewController = UINavigationController(rootViewController: viewController)
+
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.delegate = self
+
+        mainViewController = navigationController
         mainViewController?.modalPresentationStyle = .fullScreen
     }
 }
@@ -73,6 +77,30 @@ extension BreathingSessionCoordinator: BreathingSessionFlowDelegate {
     }
 
     func didPressClose(on viewModel: BreathingSessionViewModel) {
-        flowDelegate?.didFinish(on: self)
+        let discardAction = UIAlertAction(title: L10n.BreathingSession.alertDiscardAction, style: .destructive) { [weak self] _ in
+            guard let self = self else { return }
+        
+            self.flowDelegate?.didFinish(on: self)
+        }
+
+        let continueAction = UIAlertAction(title: L10n.BreathingSession.alertContinueAction, style: .default) { [weak viewModel] _ in
+            viewModel?.outputs.resume()
+        }
+
+        let alertController = UIAlertController(title: L10n.BreathingSession.alertTitle, message: L10n.BreathingSession.alertMessage, preferredStyle: .alert)
+        alertController.addAction(discardAction)
+        alertController.addAction(continueAction)
+        alertController.preferredAction = continueAction
+
+        mainViewController?.present(alertController, animated: true)
+    }
+}
+
+// MARK: - UINavigationControllerDelegate
+
+extension BreathingSessionCoordinator: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        NavigationControllerFadeAnimator(operation: operation)
     }
 }
