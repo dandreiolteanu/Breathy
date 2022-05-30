@@ -21,4 +21,13 @@ extension TimeInterval {
         return formatter.string(from: self)
     }
 
+    /// 1:20, 1:23:43
+    var hourMinuteSecondFormatted: String? {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = self > 3600 ? [.hour, .minute, .second ] : [.minute, .second]
+        formatter.zeroFormattingBehavior = [.pad]
+
+        return formatter.string(from: self)
+    }
 }

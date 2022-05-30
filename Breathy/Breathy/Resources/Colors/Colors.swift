@@ -14,6 +14,7 @@ private enum Color: String {
     case secondaryBackground
 
     case primaryText
+    case primaryTextDark
     case secondaryText
 
     case progressBarColor
@@ -26,6 +27,7 @@ extension UIColor {
     static let secondaryBackground = UIColor.initialize(with: .secondaryBackground)
 
     static let primaryText = UIColor.initialize(with: .primaryText)
+    static let primaryTextDark = UIColor.initialize(with: .primaryTextDark)
     static let secondaryText = UIColor.initialize(with: .secondaryText)
 
     static let progressBarColor = UIColor.initialize(with: .progressBarColor)

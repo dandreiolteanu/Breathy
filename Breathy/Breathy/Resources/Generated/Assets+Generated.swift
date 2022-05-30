@@ -28,6 +28,8 @@ internal enum Asset {
   internal static let icnSplash = ImageAsset(name: "icn_splash")
   internal static let icnWarning = ImageAsset(name: "icn_warning")
   internal static let imgBetterSleep = ImageAsset(name: "img_better_sleep")
+  internal static let imgBreathingExhaleInhale = ImageAsset(name: "img_breathing_exhale_inhale")
+  internal static let imgBreathingHold = ImageAsset(name: "img_breathing_hold")
   internal static let imgIncreaseHappiness = ImageAsset(name: "img_increase_happiness")
   internal static let imgMainBackground = ImageAsset(name: "img_main_background")
   internal static let imgReduceStress = ImageAsset(name: "img_reduce_stress")

@@ -24,6 +24,9 @@
 		FA3F7073283FCFF500CFD7E2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F7069283FCFF500CFD7E2 /* MainCoordinator.swift */; };
 		FA3F7074283FCFF500CFD7E2 /* BreathingExercisesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F706B283FCFF500CFD7E2 /* BreathingExercisesListViewModel.swift */; };
 		FA3F7075283FCFF500CFD7E2 /* BreathingExercisesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F706C283FCFF500CFD7E2 /* BreathingExercisesListViewController.swift */; };
+		FA48CFBF284514F50038AACA /* BreathingSessionHapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48CFBE284514F50038AACA /* BreathingSessionHapticEngine.swift */; };
+		FA48CFC2284518C40038AACA /* BreathingAnimationStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48CFC1284518C40038AACA /* BreathingAnimationStateView.swift */; };
+		FA48CFC4284518CC0038AACA /* BreathingSessionDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48CFC3284518CC0038AACA /* BreathingSessionDurationView.swift */; };
 		FA7D8DB12842393A00C1CD0A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D8DB02842393A00C1CD0A /* Font.swift */; };
 		FABE36552844BD27002A24D6 /* BreathingExerciseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE36542844BD27002A24D6 /* BreathingExerciseInfo.swift */; };
 		FABE365F2844C71E002A24D6 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE365E2844C71E002A24D6 /* Strings+Generated.swift */; };
@@ -70,6 +73,9 @@
 		FA3F7069283FCFF500CFD7E2 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FA3F706B283FCFF500CFD7E2 /* BreathingExercisesListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreathingExercisesListViewModel.swift; sourceTree = "<group>"; };
 		FA3F706C283FCFF500CFD7E2 /* BreathingExercisesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreathingExercisesListViewController.swift; sourceTree = "<group>"; };
+		FA48CFBE284514F50038AACA /* BreathingSessionHapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingSessionHapticEngine.swift; sourceTree = "<group>"; };
+		FA48CFC1284518C40038AACA /* BreathingAnimationStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingAnimationStateView.swift; sourceTree = "<group>"; };
+		FA48CFC3284518CC0038AACA /* BreathingSessionDurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingSessionDurationView.swift; sourceTree = "<group>"; };
 		FA7D8DB02842393A00C1CD0A /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		FABE36542844BD27002A24D6 /* BreathingExerciseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingExerciseInfo.swift; sourceTree = "<group>"; };
 		FABE365E2844C71E002A24D6 /* Strings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 			children = (
 				FA1725EB284508BA00538BB7 /* BreathingSessionViewController.swift */,
 				FA1725ED284508C300538BB7 /* BreathingSessionViewModel.swift */,
+				FA48CFC0284518B50038AACA /* Views */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -204,6 +211,15 @@
 			path = BreathingExercisesList;
 			sourceTree = "<group>";
 		};
+		FA48CFC0284518B50038AACA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA48CFC1284518C40038AACA /* BreathingAnimationStateView.swift */,
+				FA48CFC3284518CC0038AACA /* BreathingSessionDurationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FABE36532844BD08002A24D6 /* Business */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +261,7 @@
 			children = (
 				FABE366B2844CAD2002A24D6 /* Protocols */,
 				FABE36682844CA47002A24D6 /* Extensions */,
+				FA48CFBE284514F50038AACA /* BreathingSessionHapticEngine.swift */,
 				FA1725EF28450A4200538BB7 /* Queue.swift */,
 			);
 			path = Utilities;
@@ -254,8 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				FABE36772844D00F002A24D6 /* SnapKit+Extensions.swift */,
-				FA1725E82844FF8900538BB7 /* View+Extensions.swift */,
 				FABE36792844D74E002A24D6 /* TimeInterval+Extensions.swift */,
+				FA1725E82844FF8900538BB7 /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -469,8 +486,11 @@
 				FA7D8DB12842393A00C1CD0A /* Font.swift in Sources */,
 				FA1725E72844FDFF00538BB7 /* BreathingSessionGetReadyViewModel.swift in Sources */,
 				FABE36722844CD40002A24D6 /* BreathingExercisesListCellViewModel.swift in Sources */,
+				FA48CFBF284514F50038AACA /* BreathingSessionHapticEngine.swift in Sources */,
 				FABE367A2844D74E002A24D6 /* TimeInterval+Extensions.swift in Sources */,
+				FA48CFC4284518CC0038AACA /* BreathingSessionDurationView.swift in Sources */,
 				FA1725EE284508C300538BB7 /* BreathingSessionViewModel.swift in Sources */,
+				FA48CFC2284518C40038AACA /* BreathingAnimationStateView.swift in Sources */,
 				FA1725F028450A4200538BB7 /* Queue.swift in Sources */,
 				FABE367F2844EDDF002A24D6 /* GreetingTableViewCell.swift in Sources */,
 				FA3F7071283FCFF500CFD7E2 /* AppDelegate.swift in Sources */,

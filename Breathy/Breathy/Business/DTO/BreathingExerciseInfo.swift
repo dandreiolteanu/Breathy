@@ -65,13 +65,13 @@ struct BreathingExerciseInfo: Codable {
                                                hold: 4,
                                                repeats: 6),
                          BreathingExerciseInfo(type: .sleep,
-                                               exhale: 4,
-                                               inhale: 8,
+                                               exhale: 8,
+                                               inhale: 4,
                                                hold: 4,
                                                repeats: 6),
                          BreathingExerciseInfo(type: .happiness,
-                                               exhale: 4,
-                                               inhale: 6,
+                                               exhale: 6,
+                                               inhale: 4,
                                                hold: 4,
                                                repeats: 6)]
 }

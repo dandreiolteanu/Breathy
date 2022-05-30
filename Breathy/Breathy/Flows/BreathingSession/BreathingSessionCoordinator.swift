@@ -56,6 +56,23 @@ extension BreathingSessionCoordinator: BreathingSessionGetReadyViewModelFlowDele
     }
 
     func shouldStartExercise() {
+        let viewModel = BreathingSessionViewModelImpl(breathingExerciseInfo: breathingExerciseInfo)
+        viewModel.flowDelegate = self
 
+        let viewController = BreathingSessionViewController(viewModel: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+// MARK: - BreathingSessionFlowDelegate
+
+extension BreathingSessionCoordinator: BreathingSessionFlowDelegate {
+
+    func didFinishSession(on viewModel: BreathingSessionViewModel) {
+        flowDelegate?.didFinish(on: self)
+    }
+
+    func didPressClose(on viewModel: BreathingSessionViewModel) {
+        flowDelegate?.didFinish(on: self)
     }
 }

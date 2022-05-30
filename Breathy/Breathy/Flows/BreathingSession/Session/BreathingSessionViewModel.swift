@@ -16,7 +16,7 @@ protocol BreathingSessionFlowDelegate: AnyObject {
 protocol BreathingSessionViewModelInputs {
     var title: String { get }
     var audioUrl: String? { get }
-    var totalTime: Int { get }
+    var totalTime: TimeInterval { get }
     var breathingSessionQueue: Queue<BreathingSessionViewModelImpl.BreathingState> { get }
     var sessionTransition: AnyPublisher<BreathingSessionViewModelImpl.BreathingState, Never> { get }
     var sessionShouldPause: AnyPublisher<Void, Never> { get }
@@ -81,7 +81,7 @@ final class BreathingSessionViewModelImpl: BreathingSessionViewModel, BreathingS
 
     let title: String
     let audioUrl: String?
-    let totalTime: Int
+    let totalTime: TimeInterval
     let breathingSessionQueue: Queue<BreathingState>
 
     var sessionTransition: AnyPublisher<BreathingState, Never> {
@@ -112,7 +112,7 @@ final class BreathingSessionViewModelImpl: BreathingSessionViewModel, BreathingS
         self.title = breathingExerciseInfo.type.title
         self.audioUrl = nil
         self.breathingSessionQueue = Queue<BreathingState>()
-        self.totalTime = Int(breathingExerciseInfo.duration)
+        self.totalTime = breathingExerciseInfo.duration
 
         Self.setupSessionQueue(inhale: breathingExerciseInfo.inhale,
                                exhale: breathingExerciseInfo.exhale,
@@ -146,6 +146,8 @@ final class BreathingSessionViewModelImpl: BreathingSessionViewModel, BreathingS
     }
 
     func closeTouched() {
+        pause()
+
         flowDelegate?.didPressClose(on: self)
     }
 
