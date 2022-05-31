@@ -22,8 +22,7 @@ final class BreathingSessionViewController: BaseViewController {
     private lazy var exerciseDurationView = BreathingSessionDurationView(totalTime: viewModel.inputs.totalTime)
 
     private var hapticEngine = BreathingExerciseHapticEngine()
-    private var playerLooper: AVPlayerLooper?
-    private var player: AVQueuePlayer?
+    private var audioPlayer: AVAudioPlayer?
 
     private var subscriptions = Set<AnyCancellable>()
 
@@ -50,7 +49,7 @@ final class BreathingSessionViewController: BaseViewController {
 
         exerciseDurationView.startCountdown()
         viewModel.outputs.goToNextInSession()
-        playAudioIfNeeded()
+        playAudio()
     }
     
     private func setupView() {
@@ -123,32 +122,29 @@ final class BreathingSessionViewController: BaseViewController {
 
     // MARK: - Private Methods
 
-    private func playAudioIfNeeded() {
-        guard let audioUrl = viewModel.inputs.audioUrl, let url = URL(string: audioUrl) else { return }
-
-        let item = AVPlayerItem(url: url)
-        let queuePlayer = AVQueuePlayer(playerItem: item)
-        player = queuePlayer
-        playerLooper = AVPlayerLooper(player: queuePlayer, templateItem: item)
-        player?.volume = 0.6
+    private func playAudio() {
+        guard let url = Bundle.main.url(forResource: "breathing-audio", withExtension: "mp3") else { return }
+        audioPlayer = try? AVAudioPlayer(contentsOf: url)
+        audioPlayer?.numberOfLoops = 0
+        audioPlayer?.volume = 0.6
 
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
         try? AVAudioSession.sharedInstance().setActive(true)
 
-        player?.play()
+        audioPlayer?.play()
     }
 
     private func pause() {
         exerciseDurationView.pause()
         animationStateView.pause()
-        player?.pause()
+        audioPlayer?.pause()
         hapticEngine?.pause()
     }
 
     private func resume() {
         exerciseDurationView.resume()
         animationStateView.resume()
-        player?.play()
+        audioPlayer?.play()
     }
 
     @objc private func closeButtonTouched() {

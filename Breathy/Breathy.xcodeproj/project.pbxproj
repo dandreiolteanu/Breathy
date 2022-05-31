@@ -32,6 +32,7 @@
 		FA8DC827284537F200FCA6BD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8DC826284537F200FCA6BD /* BaseViewController.swift */; };
 		FA960F04284647E600720C24 /* BreathingExercisesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960F03284647E600720C24 /* BreathingExercisesService.swift */; };
 		FA960F07284649AC00720C24 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA960F06284649AC00720C24 /* AppCore.swift */; };
+		FAB908B328465796002C3F7F /* breathing-audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAB908B228465796002C3F7F /* breathing-audio.mp3 */; };
 		FABE36552844BD27002A24D6 /* BreathingExerciseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE36542844BD27002A24D6 /* BreathingExerciseInfo.swift */; };
 		FABE365F2844C71E002A24D6 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE365E2844C71E002A24D6 /* Strings+Generated.swift */; };
 		FABE36612844C724002A24D6 /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE36602844C724002A24D6 /* Assets+Generated.swift */; };
@@ -85,6 +86,7 @@
 		FA8DC826284537F200FCA6BD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FA960F03284647E600720C24 /* BreathingExercisesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingExercisesService.swift; sourceTree = "<group>"; };
 		FA960F06284649AC00720C24 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
+		FAB908B228465796002C3F7F /* breathing-audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "breathing-audio.mp3"; sourceTree = "<group>"; };
 		FABE36542844BD27002A24D6 /* BreathingExerciseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingExerciseInfo.swift; sourceTree = "<group>"; };
 		FABE365E2844C71E002A24D6 /* Strings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		FABE36602844C724002A24D6 /* Assets+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
@@ -254,6 +256,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		FAB908B128465649002C3F7F /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				FAB908B228465796002C3F7F /* breathing-audio.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		FABE36532844BD08002A24D6 /* Business */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +382,7 @@
 				FAC10E5E283FFD80000919D9 /* Colors */,
 				FAC10E5D283FFD51000919D9 /* Fonts */,
 				FABE365B2844C6FF002A24D6 /* Generated */,
+				FAB908B128465649002C3F7F /* Sounds */,
 				FA3F705B283FCFBB00CFD7E2 /* Info.plist */,
 				FA3F7058283FCFBB00CFD7E2 /* LaunchScreen.storyboard */,
 				FABE36662844C7C8002A24D6 /* Localizable.strings */,
@@ -478,6 +489,7 @@
 				FAC10E63283FFDA3000919D9 /* Inter-Medium.ttf in Resources */,
 				FAC10E59283FFB52000919D9 /* Colors.xcassets in Resources */,
 				FA3F705A283FCFBB00CFD7E2 /* LaunchScreen.storyboard in Resources */,
+				FAB908B328465796002C3F7F /* breathing-audio.mp3 in Resources */,
 				FAC10E64283FFDA3000919D9 /* Inter-SemiBold.ttf in Resources */,
 				FABE36642844C7C8002A24D6 /* Localizable.strings in Resources */,
 				FA3F7057283FCFBB00CFD7E2 /* Assets.xcassets in Resources */,
