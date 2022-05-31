@@ -16,17 +16,19 @@ final class RootCoordinator {
     // MARK: - Private Properties
 
     private var mainCoordinator: MainCoordinator?
+    private let appCore: AppCore
 
     // MARK: - Init
 
-    init(window: UIWindow) {
+    init(window: UIWindow, appCore: AppCore) {
         self.window = window
+        self.appCore = appCore
     }
 
     // MARK: - Public Methods
     
     func start() {
-        let coordinator = MainCoordinator()
+        let coordinator = MainCoordinator(appCore: appCore)
         coordinator.start()
 
         self.mainCoordinator = coordinator

@@ -64,8 +64,15 @@ final class BreathingExercisesListViewModelImpl: BreathingExercisesListViewModel
     // MARK: - Private Properties
 
     private let _shouldReloadSubject = PassthroughSubject<Void, Never>()
+    private let breathingExercises: [BreathingExerciseInfo]
+    
+    // MARK: - Init
+    
+    init(breathingExercisesService: BreathingExercisesService) {
+        self.breathingExercises = breathingExercisesService.exercises
+    }
 
-    // MARK: - Public Properties
+    // MARK: - Public Methods
 
     func viewLoaded() {
         dataSourceSnapshot.appendSections([.greeting])
@@ -73,7 +80,7 @@ final class BreathingExercisesListViewModelImpl: BreathingExercisesListViewModel
                                        toSection: .greeting)
 
         dataSourceSnapshot.appendSections([.exercises])
-        dataSourceSnapshot.appendItems(BreathingExerciseInfo.values.map { .exercise(BreathingExercisesListCellViewModel(breathingExerciseInfo: $0)) },
+        dataSourceSnapshot.appendItems(breathingExercises.map { .exercise(BreathingExercisesListCellViewModel(breathingExerciseInfo: $0)) },
                                        toSection: .exercises)
 
         dataSourceSnapshot.appendSections([.comingSoon])
@@ -86,7 +93,7 @@ final class BreathingExercisesListViewModelImpl: BreathingExercisesListViewModel
     func didSelectRow(at indexPath: IndexPath) {
         switch dataSourceSnapshot.sectionIdentifiers[indexPath.section] {
         case .exercises:
-            flowDelegate?.didSelectBreathingExerciseInfo(on: self, breathingExerciseInfo: BreathingExerciseInfo.values[indexPath.row])
+            flowDelegate?.didSelectBreathingExerciseInfo(on: self, breathingExerciseInfo: breathingExercises[indexPath.row])
         case .greeting, .comingSoon:
             break
         }

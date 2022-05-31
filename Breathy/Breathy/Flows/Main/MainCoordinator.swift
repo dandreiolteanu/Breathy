@@ -14,11 +14,21 @@ final class MainCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var mainViewController: UIViewController?
 
+    // MARK: - Private Properties
+
+    private let appCore: AppCore
+
+    // MARK: - Init
+
+    init(appCore: AppCore) {
+        self.appCore = appCore
+    }
+
     // MARK: - Public Methods
 
     func start() {
         let viewController = BreathingExercisesListViewController(viewModel: {
-            let viewModel = BreathingExercisesListViewModelImpl()
+            let viewModel = BreathingExercisesListViewModelImpl(breathingExercisesService: appCore.breathingExercisesService)
             viewModel.flowDelegate = self
             return viewModel
         }())

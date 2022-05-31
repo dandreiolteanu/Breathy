@@ -13,6 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     var rootCoordinator: RootCoordinator?
+    private(set) lazy var appCore = AppCore()
     
     // MARK: - Public Methods
     
@@ -24,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
 
-        let rootCoordinator = RootCoordinator(window: window)
+        let rootCoordinator = RootCoordinator(window: window, appCore: appCore)
         self.rootCoordinator = rootCoordinator
         rootCoordinator.start()
     }
