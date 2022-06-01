@@ -2,10 +2,11 @@
 
 Showcases breathing exercises with matching vibration.
 
+If you want to quickly install it -> **[TestFlight](https://testflight.apple.com/join/raYVCtzH)** 
+
 ![](READMEAssets/Breathy-Github-video.gif)
 
 ## How to run
-
 1. Please make sure you have latest **[Xcode](https://apps.apple.com/ro/app/xcode/id497799835?mt=12)** version installed on your Mac
 2. Please make sure you have latest **[SwiftGen](https://github.com/SwiftGen/SwiftGen)** version installed on your Mac
 4. Go to project folder
